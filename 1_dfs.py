@@ -1,20 +1,19 @@
 graph = {
-  '5' : ['3','7'],
-  '3' : ['2', '4'],
-  '7' : ['8'],
-  '2' : [],
-  '4' : ['8'],
-  '8' : []
+  '1': ['2', '3', '4'],
+  '2': ['4', '5'],
+  '3': ['4'],
+  '4': [],
+  '5': []
 }
 
-visited = set() 
+visited = set()
 
-def dfs(visited, graph, node): 
+def dfs(visited, graph, node):
     if node not in visited:
-        print (node)
+        print(node)
         visited.add(node)
         for neighbour in graph[node]:
             dfs(visited, graph, neighbour)
 
-print("DFS Traversal:")
-dfs(visited, graph, '5')
+print('DFS')
+dfs(visited, graph, '1')
